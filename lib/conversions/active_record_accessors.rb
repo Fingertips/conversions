@@ -12,17 +12,27 @@ module Conversions #:nodoc:
     #
     # Examples:
     #
+    #  require 'conversions'
+    #
     #  class Flight
+    #    extend Conversions::ActiveRecordAccessors
+    #
     #    attr_accessor :distance
     #    conversion_accessor :distance, :internal => :kilometers, :external => :miles, :scale => 2
     #
     #    def initialize(distance)
-    #      distance = distance
+    #      self.distance = distance
     #    end
     #  end
     #
     #  flight = Flight.new(1200)
     #  flight.distance_in_miles #=> 745.65, rounded down to two decimals as specified in :scale
+    #
+    # When used as a plugin for Rails, the ActiveRecord::Base is automatically extended.
+    #
+    #  class Car < ActiveRecord::Base
+    #    conversion_accessor :length, :internal => :kilometers, :external => :miles
+    #  end
     def conversion_accessor(attribute, options={})
       if options[:internal].nil? or options[:external].nil?
         raise ArgumentError, "Please specify both :external and :internal metrics."

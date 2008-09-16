@@ -26,4 +26,6 @@ require 'conversions/ext'
 require 'conversions/active_record_accessors'
 
 Numeric.send :include, Conversions::Ext
-ActiveRecord::Base.send :extend, Conversions::ActiveRecordAccessors
+if defined?(ActiveRecord)
+  ActiveRecord::Base.send :extend, Conversions::ActiveRecordAccessors
+end

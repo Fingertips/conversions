@@ -15,7 +15,7 @@ end
 desc 'Generate documentation for conversions plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Array Paginator'
+  rdoc.title    = 'Conversions'
   rdoc.options << '--line-numbers' << '--inline-source' << '--charset' << 'utf-8'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')

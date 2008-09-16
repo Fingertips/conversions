@@ -19,12 +19,13 @@ module Conversions #:nodoc
       scale.nil? ? value : (value * (10 ** scale)).round / (10 ** scale).to_f
     end
 
-    def self.exchange_rate(f, t) #:nodoc:
-      from = conversion[f]
-      raise ArgumentError, "Can't convert from `#{f}', unknown unit" if from.nil?
-      value = from[t]
-      raise ArgumentError, "Can't convert from `#{f}' to `#{t}', unknown unit" if value.nil?
-      value
+    def self.exchange_rate(from_unit, to_unit) #:nodoc:
+      return 1 if from_unit == to_unit
+      from = conversion[from_unit]
+      raise ArgumentError, "Can't convert from `#{from}', unknown unit" if from.nil?
+      to = from[to_unit]
+      raise ArgumentError, "Can't convert from `#{from_unit}' to `#{to_unit}', unknown unit" if to.nil?
+      to
     end
     
     def self.conversion #:nodoc:
