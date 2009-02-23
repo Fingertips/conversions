@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   EOF
   spec.homepage = "http://github.com/Fingertips/conversions/tree/master"
   
-  spec.files = ["conversions.gemspec", "init.rb", "lib", "LICENSE", "rails", "Rakefile", "README", "test", "TODO", "lib/conversions/active_record_accessors.rb", "lib/conversions/defaults.rb", "lib/conversions/unit.rb", "lib/conversions.rb", "rails/init.rb", "test/accessor_test.rb", "test/ext_test.rb", "test/test_helper.rb", "test/unit_test.rb", "test/conversions_test.rb"]
+  spec.files = ["init.rb", "lib", "LICENSE", "rails", "Rakefile", "README", "test", "TODO", "lib/conversions/active_record_accessors.rb", "lib/conversions/defaults.rb", "lib/conversions/unit.rb", "lib/conversions.rb", "rails/init.rb", "test/accessor_test.rb", "test/ext_test.rb", "test/test_helper.rb", "test/unit_test.rb", "test/conversions_test.rb"]
   spec.test_files = ["test/unit_test.rb", "test/accessor_test.rb", "test/ext_test.rb", "test/test_helper.rb", "test/conversions_test.rb"]
   
   spec.has_rdoc = true
