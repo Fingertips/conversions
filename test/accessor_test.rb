@@ -8,7 +8,10 @@ class Flight
 end
 
 class AccessorTest < Test::Unit::TestCase
-
+  def setup
+    reset_defaults
+  end
+  
   def setup
     @flight = Flight.new
   end
